@@ -1,0 +1,21 @@
+security:
+  oauth2:
+    client:
+      client-id: oh-client-id
+      client-secret: oh-client-secret
+      authorized-grant-types: authorization_code,refresh_token,password
+      scope: read,write
+      access-token-validity-seconds: 1200
+    resource:
+      jwt:
+        key-pair:
+          alias: jwt-oh
+          store-password: jwtohpassword
+          path: "jwt-oh.jks"
+
+#logging:
+#  level:
+#    root: debug
+#
+#
+#

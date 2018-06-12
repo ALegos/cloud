@@ -1,0 +1,12 @@
+encrypt:
+  keyStore:
+    location: "classpath:/config-server.jks"
+    password: ohConfigServerKeyStorePass
+    alias: config-server-key
+    secret: ohConfigServerKeyPass
+#spring:
+#  cloud:
+#    config:
+#      server:
+#        encrypt:
+#          enabled: false

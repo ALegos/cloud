@@ -1,0 +1,19 @@
+server:
+  port: 8888
+
+spring:
+  security:
+    user:
+      name: admin
+      password: Yzgbuc6p
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ALegos/cloud-config.git
+#          clone-on-start: true
+
+#logging:
+#  level:
+#    root: debug
+

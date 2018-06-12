@@ -1,0 +1,59 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.2.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+allprojects {
+    group = 'com.hupalo'
+    version '0.0.1-SNAPSHOT'
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'eclipse'
+
+    repositories {
+        mavenCentral()
+        maven {
+            url 'https://repo.spring.io/libs-milestone'
+        }
+    }
+}
+
+subprojects {
+
+    sourceCompatibility = 10
+    targetCompatibility = 10
+
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    ext {
+        springfoxVersion = '2.8.0'
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:Finchley.RC1"
+        }
+        dependencies {
+            dependency "io.springfox:springfox-swagger2:${springfoxVersion}"
+            dependency "io.springfox:springfox-swagger-ui:${springfoxVersion}"
+        }
+    }
+
+    dependencies {
+        compile('org.springframework.boot:spring-boot-starter')
+        compile('org.springframework.boot:spring-boot-starter-web')
+        compile("io.springfox:springfox-swagger2")
+        compile("io.springfox:springfox-swagger-ui")
+        testCompile('org.springframework.boot:spring-boot-starter-test')
+    }
+}
+

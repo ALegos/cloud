@@ -1,0 +1,9 @@
+spring.application.name: login-client
+spring.profiles.active: dev
+spring.cloud.config:
+  uri: http://localhost:8888
+  username: admin
+  password: Yzgbuc6p
+# comma-separated list, the items in the list are tried one by one until one succeeds
+  label: local,dev
+
