@@ -10,23 +10,23 @@ import org.springframework.core.env.MapPropertySource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-public class InfoController {
-
-	@Autowired
-	private Environment env;
-
-	@GetMapping
-	public Map<String, Object> getProperties() {
-		var map = new HashMap();
-		((AbstractEnvironment) env).getPropertySources().forEach(x ->
-				{
-					if (x instanceof MapPropertySource) {
-						map.putAll(((MapPropertySource) x).getSource());
-					}
-				}
-		);
-
-		return map;
-	}
-}
+//@RestController
+//public class InfoController {
+//
+//	@Autowired
+//	private Environment env;
+//
+//	@GetMapping
+//	public Map<String, Object> getProperties() {
+//		var map = new HashMap();
+//		((AbstractEnvironment) env).getPropertySources().forEach(x ->
+//				{
+//					if (x instanceof MapPropertySource) {
+//						map.putAll(((MapPropertySource) x).getSource());
+//					}
+//				}
+//		);
+//
+//		return map;
+//	}
+//}

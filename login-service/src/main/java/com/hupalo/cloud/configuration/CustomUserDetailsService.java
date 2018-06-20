@@ -26,9 +26,9 @@ public class CustomUserDetailsService implements UserDetailsService {
 	}
 
 	@PostConstruct
-	private void init(){
-		users.put("admin", new CustomUserDetails("admin", "admin", "ADMIN"));
-		users.put("user", new CustomUserDetails("user", "user", "USER"));
+	private void init() {
+		users.put("admin", new CustomUserDetails("admin", "{noop}admin", "ADMIN"));
+		users.put("user", new CustomUserDetails("user", "{noop}user", "USER"));
 
 	}
 }

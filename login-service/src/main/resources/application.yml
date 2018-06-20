@@ -1,11 +1,11 @@
 security:
   oauth2:
     client:
-      client-id: oh-client-id
-      client-secret: oh-client-secret
+      client-id: oh-client
+      client-secret: oh-secret
       authorized-grant-types: authorization_code,refresh_token,password
       scope: read,write
-      access-token-validity-seconds: 1200
+      access-token-validity-seconds: 36000
     resource:
       jwt:
         key-pair:
@@ -13,9 +13,14 @@ security:
           store-password: jwtohpassword
           path: "jwt-oh.jks"
 
-#logging:
-#  level:
-#    root: debug
-#
-#
-#
+
+spring:
+  security:
+    user:
+      name: admin
+      password: test
+
+logging:
+  level:
+    root: debug
+
